@@ -65,4 +65,6 @@ Compose 默认仅映射到本机 `127.0.0.1:8091`，数据保存到 Docker 卷�
 - 官网：https://www.zhuatech.cn/
 - 商业授权、定制开发、私有部署及系统集成咨询微信：`zhuatech`、`zhuatech2`
 
-![微信 zhuatech](assets/wechat-zhuatech.png) ![微信 zhuatech2](assets/wechat-zhuatech2.png)
+| 微信 zhuatech | 微信 zhuatech2 |
+| :---: | :---: |
+| <img src="assets/wechat-zhuatech.png" alt="微信 zhuatech" height="200"> | <img src="assets/wechat-zhuatech2.png" alt="微信 zhuatech2" height="200"> |
