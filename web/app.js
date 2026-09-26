@@ -47,14 +47,14 @@ function form(title, fields, submit = '确定') {
   return new Promise((resolve) => {
     dialogForm.innerHTML = `<h2>${esc(title)}</h2>${fields}<div class="dialog-actions"><button class="small secondary" type="button" id="cancel-dialog">取消</button><button class="small" type="submit">${esc(submit)}</button></div>`;
     dialog.showModal();
-    const cancel = () => { dialog.close(); resolve(null); };
+    const cancel = () => { dialog.close(); dialogForm.innerHTML = ''; resolve(null); };
     dialogForm.querySelector('#cancel-dialog').onclick = cancel;
     dialog.oncancel = (event) => { event.preventDefault(); cancel(); };
     dialogForm.onsubmit = (event) => {
       event.preventDefault();
       if (!dialogForm.reportValidity()) return;
       const value = Object.fromEntries(new FormData(dialogForm));
-      dialog.close(); resolve(value);
+      dialog.close(); dialogForm.innerHTML = ''; resolve(value);
     };
   });
 }
