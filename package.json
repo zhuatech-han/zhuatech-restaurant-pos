@@ -1,0 +1,15 @@
+{
+  "name": "zhuatech-restaurant-pos",
+  "private": true,
+  "version": "0.1.0",
+  "description": "知华科技餐饮收银、后厨和交班系统",
+  "type": "module",
+  "engines": { "node": ">=24.19.0" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "lint": "node --check src/db.js && node --check src/pos.js && node --check src/server.js && node --check web/app.js",
+    "build": "node scripts/build.js",
+    "backup": "node scripts/backup.js"
+  }
+}

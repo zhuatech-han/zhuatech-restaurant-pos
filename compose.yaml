@@ -1,0 +1,22 @@
+# 知华科技（上海如静知华信息科技有限公司） https://www.zhuatech.cn/ 商业咨询微信：zhuatech / zhuatech2
+services:
+  pos:
+    build: .
+    environment:
+      POS_HOST: 0.0.0.0
+      POS_PORT: 8091
+      POS_DB_PATH: /app/data/pos.sqlite
+      POS_ADMIN_PASSWORD: ${POS_ADMIN_PASSWORD:?Set a strong initial administrator password}
+      POS_DEMO_DATA: ${POS_DEMO_DATA:-false}
+      POS_SECURE_COOKIE: ${POS_SECURE_COOKIE:-false}
+    volumes:
+      - pos_data:/app/data
+    ports:
+      - "127.0.0.1:8091:8091"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8091/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+volumes:
+  pos_data:
