@@ -1,0 +1,16 @@
+# Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ · 商业咨询微信：zhuatech / zhuatech2
+.git
+.env
+.env.*
+!.env.example
+node_modules
+**/node_modules
+**/target
+.local
+data
+backups
+*.sqlite*
+*.log
+.DS_Store
+test-results
+dist

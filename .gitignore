@@ -4,3 +4,7 @@ dist/
 node_modules/
 *.sqlite*
 .DS_Store
+
+.env.*
+!.env.example
+*.log

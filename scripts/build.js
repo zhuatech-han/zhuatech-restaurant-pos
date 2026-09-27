@@ -9,7 +9,7 @@ for (const file of ['web/index.html','web/app.js','web/style.css','assets/zhuate
 const dist = join(root, 'dist');
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist);
-for (const entry of ['package.json','Dockerfile','compose.yaml','.env.example','README.md','LICENSE','src','web','assets','docs','scripts','tests']) {
+for (const entry of ['package.json','Dockerfile','compose.yaml','.dockerignore','.env.example','README.md','LICENSE','src','web','assets','docs','scripts','tests','deploy']) {
   cpSync(join(root, entry), join(dist, entry), { recursive: true });
 }
 process.stdout.write(`交付文件已生成：${dist}\n`);

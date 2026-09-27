@@ -93,7 +93,7 @@ async function refresh(ifChanged = false) {
   } catch (error) { toast(error.message); }
 }
 function renderLogin() {
-  app.innerHTML = `<div class="login"><div class="card"><div class="brand"><img src="/assets/zhuatech-logo.jpg" alt="知华科技">知华餐饮收银</div><h1>登录门店</h1><form id="login-form">${input('username','用户名','text','','autocomplete="username"')}${input('password','密码','password','','autocomplete="current-password"')}<button class="button">登录</button></form><footer>知华科技 · <a href="https://www.zhuatech.cn/" target="_blank" rel="noopener">官方网站</a></footer></div></div>`;
+  app.innerHTML = `<div class="login"><div class="card"><div class="brand"><img src="/assets/zhuatech-logo.jpg" alt="知华科技">知华餐饮收银</div><h1>登录门店</h1><form id="login-form">${input('username','用户名','text','','autocomplete="username"')}${input('password','密码','password','','autocomplete="current-password"')}<button class="button">登录</button></form><footer>源码学习版 v0.1.0 · 商用须书面授权<br>上海如静知华信息科技有限公司<br>微信 zhuatech / zhuatech2 · <a href="https://www.zhuatech.cn/" target="_blank" rel="noopener">官方网站</a></footer></div></div>`;
   document.querySelector('#login-form').onsubmit = async (event) => {
     event.preventDefault();
     const payload = Object.fromEntries(new FormData(event.currentTarget));
